@@ -1,0 +1,32 @@
+{
+  "name": "tt-33-anywhere-fitness",
+  "version": "1.0.0",
+  "description": "AnywhereFitness is the all-in-one solution to meet your “on-location” fitness class needs. AnywhereFitness makes it painless for Instructors and Clients alike to hold and attend Fitness classes wherever they might be held. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TT-33-Anywhere-Fitness/backend.git"
+  },
+  "author": "https://github.com/Chantz-J",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TT-33-Anywhere-Fitness/backend/issues"
+  },
+  "homepage": "https://github.com/TT-33-Anywhere-Fitness/backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^4.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.4",
+    "nodemon": "^2.0.7",
+    "sqlite3": "^5.0.2"
+  }
+}
