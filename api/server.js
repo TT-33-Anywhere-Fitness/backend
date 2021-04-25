@@ -4,7 +4,6 @@ const cors = require('cors')
 
 //ROUTES 
 
-
 const server = express()
 
 server.use(helmet())
