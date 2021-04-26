@@ -11,6 +11,7 @@ exports.up = async (knex) => {
     .createTable('classes', (classes) => {
         classes.increments('class_id')
         classes.string('class_type').notNullable()
+        classes.string('class_image').defaultTo('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fitness-hangover-1565770628.jpg')
         classes.string('start_time', 128).notNullable()
         classes.string('duration', 128).notNullable()
         classes.string('intensity_level', 128).notNullable()
