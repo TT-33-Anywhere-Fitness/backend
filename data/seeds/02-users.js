@@ -1,7 +1,7 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex.raw('TRUNCATE TABLE users, classes CASCADE')
+  return knex.raw('TRUNCATE TABLE users CASCADE')
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
@@ -9,6 +9,6 @@ exports.seed = function(knex) {
         {username: 'Austin', password: 'abc123', user_type: 1},
         {username: 'Tommy', password: 'abc123', user_type: 1},
         {username: 'Karla', password: 'abc123', user_type: 1},
-      ])
-    })
-}
+      ]);
+    });
+};
