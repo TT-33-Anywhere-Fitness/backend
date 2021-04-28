@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const Classes = require('./classes-model')
-const { confirmPayload } = require('./classes-middleware')
+const { confirmPayload, confirmId } = require('./classes-middleware')
 
 
 //[GET]
@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', confirmId, (req, res, next) => {
     const { id } = req.params
     Classes.getById(id)
     .then(classes => {
@@ -22,7 +22,7 @@ router.get('/:id', (req, res, next) => {
 })
 
 //[POST]
-router.post('/',  (req, res, next) => {
+router.post('/',  confirmPayload, (req, res, next) => {
    Classes.addClass(req.body)
         .then(newClass => {
             res.status(201).json(newClass)
@@ -31,7 +31,7 @@ router.post('/',  (req, res, next) => {
 })
 
 //[PUT]
-router.put('/:id', (req, res, next) => {
+router.put('/:id', confirmId, (req, res, next) => {
     const { id } = req.params
     Classes.editClass(id, req.body)
     .then(changes => {
