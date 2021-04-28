@@ -20,4 +20,8 @@ server.get('/api', (req, res) => {
     res.json(`The TT-33 Anywhere Fitness api! 🚴‍♀🏃‍♂️`)
 })
 
+server.get('/db', (req, res) => {
+    res.json(`The TT-33 Anywhere Fitness api! 🚴‍♀🏃‍♂️`)
+})
+
 module.exports = server

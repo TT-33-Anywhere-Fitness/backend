@@ -30,7 +30,7 @@ module.exports = {
   development: {
     ...sharedConfig,
     connection: process.env.DEV_DATABASE_URL,
-    ssl: false,
+    // ssl: process.env.DEV_DATABASE_URL ? true : false
   },
   testing: {
     ...sharedConfig,
@@ -38,8 +38,7 @@ module.exports = {
   },
   production: {
     ...sharedConfig,
-    // connectionString: process.env.DATABASE_URL,
-    // ssl: process.env.DATABASE_URL ? true : false,
+    connection: process.env.DATABASE_URL,
     pool: { 
       min: 2, 
       max: 10, 
