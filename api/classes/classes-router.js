@@ -6,7 +6,7 @@ const { restricted } = require('../auth/auth-middleware')
 
 
 //[GET]
-router.get('/', restricted, (req, res, next) => {
+router.get('/', (req, res, next) => {
     Classes.getAll()
         .then(classes => {
             res.json(classes);
@@ -14,7 +14,7 @@ router.get('/', restricted, (req, res, next) => {
         .catch(next)
 })
 
-router.get('/:id', confirmId, restricted, (req, res, next) => {
+router.get('/:id', confirmId, (req, res, next) => {
     const { id } = req.params
     Classes.getById(id)
     .then(classes => {
