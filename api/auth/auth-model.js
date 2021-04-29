@@ -16,7 +16,7 @@ const getUserbyId = (id) => {
 
 const addUser = async (user) => {
     return await db('users')
-    .insert(user, ['user_id', 'created_at', 'username', 'password', 'auth_code', 'user_type']);
+    .insert(user, ['user_id', 'username', 'password', 'auth_code', 'user_type'])
 }
 
 module.exports = {
