@@ -5,6 +5,7 @@ const cors = require('cors')
 //ROUTES: Authentication, Classes, Users, Search...
 const classesRouter = require('./classes/classes-router')
 const usersRouter = require('./users/user-router')
+const authRouter = require('./auth/auth-router')
 /* --------------------------------------------- */
 
 const server = express()
@@ -13,9 +14,12 @@ server.use(helmet())
 server.use(express.json())
 server.use(cors())
 
+// API & AUTH ENDPOINTS
 server.use('/api/classes', classesRouter)
 server.use('/api/users', usersRouter)
+server.use('/auth', authRouter)
 
+//ENDPOINTS
 server.get('/', (req, res) => {
     res.json(`Welcome to the TT-33 Anywhere Fitness server! 🚴‍♀️`)
 })
