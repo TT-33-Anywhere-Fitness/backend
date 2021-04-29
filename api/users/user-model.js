@@ -1,4 +1,3 @@
-
 const db = require('../../data/db-config')
 
 const findUser = () => {
@@ -13,7 +12,27 @@ const findUserById = (id) => {
     .first()
 }
 
+const addUser = async (user) => { 
+    return await db('users')
+    .insert(user, ['username', 'user_type'])
+}
+
+const editUser = async (id, data) => {
+    return await db('users')
+    .where('user_id', id)
+    .update(data, ['username', 'user_type'])
+}
+
+const deleteUser = async (id) => {
+    return await db('users')
+    .where('user_id', id)
+    .del()
+}
+
 module.exports = {
     findUser,
-    findUserById
+    findUserById,
+    addUser,
+    editUser,
+    deleteUser
 }

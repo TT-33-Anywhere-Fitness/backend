@@ -3,7 +3,7 @@ const Classes = require('./classes-model')
 const confirmId = async (req, res, next) => {
     const { id } = req.params
     const aClass = await Classes.getById(id)
-    !aClass ? res.status(404).json({message: 'Class with ID not found'}) : next() 
+    !aClass ? res.status(404).json({message: `Class with ID of ${id} not found`}) : next() 
 }
 
 const confirmPayload = async (req, res, next) => {
