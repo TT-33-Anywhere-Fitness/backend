@@ -3,9 +3,10 @@ exports.up = function(knex) {
     return knex.schema
     .createTable('users', (users) => {
         users.increments('user_id')
-        users.timestamp(true, false)
+        users.timestamp('created_at')
         users.string('username', 128).notNullable()
         users.string('password', 128).notNullable()
+        users.string('auth_code', 128)
         users.integer('user_type').defaultTo(1)
     })
       .createTable('classes', (classes) => {

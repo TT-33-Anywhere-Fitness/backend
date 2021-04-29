@@ -16,9 +16,9 @@
 
 ### CLASSES TABLE SCHEMA
 
-| class_id | class_type | class_image | start_time | duration | start_time | intensity_level | location | num_of_attendees | max_class_size | user_id |
-| :-----:  | :------:   | :------:    | :---------:| :------- | :--------- | :-------------- | :-------:|:---------------: | :------------: | :------ |
-|automatic | required   | required    | required   | required | required   | required        | required | required         | required       | required|
+| class_id | class_type | class_image | start_time | duration | start_time | intensity_level | location | num_of_attendees | max_class_size | user_id  |
+| :-----:  | :------:   | :------:    | :---------:| :------- | :--------- | :-------------- | :-------:|:---------------: | :------------: | :------  |
+|automatic | required   | required    | required   | required | required   | required        | required | required         | required       | automatic|
  
 
 ## 🚨 More on forking this repo soon!
