@@ -1,4 +1,4 @@
-const { sign } = require('jsonwebtoken')
+const { sign, verify } = require('jsonwebtoken')
 const { JWT_SECRET } = require('../secrets')
 
 const Auth = require('./auth-model')
@@ -33,16 +33,16 @@ const confirmUserExists = async (req, res, next) => {
 }
 
 const restricted = (req, res, next) => {
-    const token = req.headers.authorization;
+    const token = req.headers.authorization
 
     if (!token) {
         res.status(401).json({ message: 'Authorization required - please login.' })
     } else {
-        jwt.verify(token, JWT_SECRET, (err, decoded) => {
+        verify(token, JWT_SECRET, (err, decoded) => {
             if (err) {
                 res.status(401).json({ message: 'Invalid token - please log back in.' })
             } else {
-                res.decodedToken = decoded;
+                res.decodedToken = decoded
                 next();
             }
         })

@@ -6,7 +6,7 @@ const { restricted } = require('../auth/auth-middleware')
 
 
 //[GET]
-router.get('/', (req, res, next) => {
+router.get('/', restricted, (req, res, next) => {
     Classes.getAll()
         .then(classes => {
             res.json(classes);
@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
         .catch(next)
 })
 
-router.get('/:id', confirmId, (req, res, next) => {
+router.get('/:id', restricted, confirmId, (req, res, next) => {
     const { id } = req.params
     Classes.getById(id)
     .then(classes => {
@@ -24,7 +24,7 @@ router.get('/:id', confirmId, (req, res, next) => {
 })
 
 //[POST]
-router.post('/',  confirmPayload, (req, res, next) => {
+router.post('/',  restricted, confirmPayload, (req, res, next) => {
    Classes.addClass(req.body)
         .then(newClass => {
             res.status(201).json(newClass)
