@@ -68,5 +68,5 @@ module.exports = {
     isUsernametaken,
     confirmUserExists,
     restricted,
-    createTokenInstance,
-}
+    createTokenInstance
+};
