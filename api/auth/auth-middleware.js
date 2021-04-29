@@ -5,8 +5,7 @@ const Auth = require('./auth-model')
 
 const confirmPayload = (req, res, next) => {
     const { username, password } = req.body
-    !username || !password ? res.status(401).json({message: 'Username and password required'}) :
-    next()
+    !username || !password ? res.status(401).json({message: 'Username and password required'}) : next()
 }
 
 const isUsernametaken = async (req, res, next) => {
