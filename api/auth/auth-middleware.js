@@ -33,7 +33,7 @@ const confirmUserExists = async (req, res, next) => {
 
 const restricted = (req, res, next) => {
     const token = req.headers.authorization
-
+    
     if (!token) {
         res.status(401).json({ message: 'Authorization required - please login.' })
     } else {
